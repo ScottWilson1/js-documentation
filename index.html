@@ -2,51 +2,29 @@
 <html lang="en">
 <head>
     <title>JS Documentation</title>
-
+    <link rel="stylesheet" type="text/css" href="style.css">
+    <link href="https://fonts.googleapis.com/css2?family=Nanum+Gothic&family=Noto+Sans+KR&family=Quicksand&family=Titillium+Web&display=swap" rel="stylesheet">
+    <link rel="icon" type="image/png" href="https://upload.wikimedia.org/wikipedia/commons/thumb/6/6a/JavaScript-logo.png/768px-JavaScript-logo.png">
 </head>
 
 <body>
     <nav id="navbar">
-        <header>JS Documentation</header>
-        <a href="#What_is_Javascript?" class="nav-link">
-            What is JavaScript?
-        </a>
-        <a href="#What_you_should_already_konw" class="nav-link">
-            What you should already know
-        </a>
-        <a href="#JavaScript_and_Java" class="nav-link">
-            JavaScript and Java
-        </a>
-        <a href="#Hello_world" class="nav-link">
-            Hello world
-        </a>
-        <a href="#Variables" class="nav-link">
-            Variables
-        </a>
-        <a href="#Declaring_variables" class="nav-link">
-            Declaring variables
-        </a>
-        <a href="#Variable_scope" class="nav-link">
-            Variable scope
-        </a>
-        <a href="#Global_variables" class="nav-link">
-            Global variables
-        </a>
-        <a href="#Constants" class="nav-link">
-            Constants
-        </a>
-        <a href="#Data_types" class="nav-link">
-            Data types
-        </a>
-        <a href="#if...else_statement" class="nav-link">
-            if...else statement
-        </a>
-        <a href="#Function_declarations" class="nav-link">
-            Function declarations
-        </a>
-        <a href="#Reference" class="nav-link">
-            Reference
-        </a>
+        <header><h1>JS Documentation</h1></header>
+        <ul>
+            <li><a href="#What_is_Javascript?" class="nav-link">What is JavaScript?</a></li>
+            <li><a href="#What_you_should_already_konw" class="nav-link">What you should already know</a></li>
+            <li><a href="#JavaScript_and_Java" class="nav-link">JavaScript and Java</a></li>
+            <li><a href="#Hello_world" class="nav-link">Hello world</a></li>
+            <li><a href="#Variables" class="nav-link">Variables</a></li>
+            <li><a href="#Declaring_variables" class="nav-link">Declaring variables</a></li>
+            <li><a href="#Variable_scope" class="nav-link">Variable scope</a></li>
+            <li><a href="#Global_variables" class="nav-link">Global variables</a></li>
+            <li><a href="#Constants" class="nav-link">Constants</a></li>
+            <li><a href="#Data_types" class="nav-link">Data types</a></li>
+            <li><a href="#if...else_statement" class="nav-link">if...else statement</a></li>
+            <li><a href="#Function_declarations" class="nav-link">Function declarations</a></li>
+            <li><a href="#Reference" class="nav-link">Reference</a></li>
+        </ul>
     </nav>
 
     <main id="main-doc">
@@ -76,7 +54,7 @@
             <p>This guide assumes you have the following basic background:</p>
             <ul>
                 <li>
-                    A general understanding of the Internet and the World Wide Web (<a href="https://developer.mozilla.org/en-US/docs/Glossary/WWW">WWW</a>
+                    A general understanding of the Internet and the World Wide Web (<a href="https://developer.mozilla.org/en-US/docs/Glossary/WWW">WWW</a>).
                 </li>
                 <li>
                     Good working knowledge of HyperText Markup Language (<a href="https://developer.mozilla.org/en-US/docs/Glossary/HTML">HTML</a>).
@@ -125,18 +103,18 @@
             <p>
                 To get started with writing JavaScript, open the Web Console in multi-line mode, and write your first "Hello world" JavaScript code:
             </p>
-            <code class="code-block">
-                (function(){
-                <pre>    "use strict";</pre>
-                <pre>    /* Start of your code */</pre>
-                <pre>    function greetMe(yourName) {</pre>
-                <pre>     alert('Hello ' + yourName);</pre>
-                <pre>    }</pre>
-                <br>    
-                <pre>    greetMe('World');</pre>
-                <pre>    /* End of your code */</pre>
-                  })();</pre>
-            </code>
+<pre><code>
+(function(){
+    "use strict";
+    /* Start of your code */
+    function greetMe(yourName) {
+        alert('Hello ' + yourName);
+    }
+    
+    greetMe('World');
+    /* End of your code */
+})();
+</code></pre>
             <p>
                 Press <span class="keyboard-button">Cmd</span>+<span class="keyboard-button">Enter</span>  or <span class="keyboard-button">Ctrl</span>+<span class="keyboard-button">Enter</span> (or click the Run button) to watch it unfold in your browser!
             </p>
@@ -182,21 +160,21 @@
             <p>
                 For example, the following code will log <code>5</code>, because the scope of <code>x</code> is the global context (or the function context if the code is part of a function). The scope of <code>x</code> is not limited to the immediate <code>if</code> statement block.
             </p>
-            <code class="code-block">
-                if (true) {<br>
-                    var x = 5;<br>
-                  }<br>
-                  console.log(x);  // x is 5
-            </code>
+<pre><code>
+if (true) {
+    var x = 5;
+}
+console.log(x);  // x is 5
+</code></pre>
             <p>
                 This behavior changes when using the <code>let</code> declaration (introduced in ECMAScript 2015).
             </p>
-            <code class="code-block">
-                if (true) {<br>
-                    let y = 5;<br>
-                  }<br>
-                  console.log(y);  // ReferenceError: y is not defined
-            </code>
+<pre><code>
+if (true) {
+    let y = 5;
+}
+console.log(y);  // ReferenceError: y is not defined
+</code></pre>
         </section>
 
         <section id="Global_variables" class="main-section">
@@ -218,9 +196,9 @@
             <p>
                 The syntax of a constant identifier is the same as any variable identifier: it must start with a letter, underscore, or dollar sign (<code>$</code>), and can contain alphabetic, numeric, or underscore characters.
             </p>
-            <code class="code-block">
-                const PI = 3.14;
-            </code>
+<pre><code>
+const PI = 3.14;
+</code></pre>
             <p>
                 A constant cannot change value through assignment or be re-declared while the script is running. It must be initialized to a value.
             </p>
@@ -230,34 +208,34 @@
             <p>
                 You cannot declare a constant with the same name as a function or variable in the same scope. For example:
             </p>
-            <code class="code-block">
-                // THIS WILL CAUSE AN ERROR<br>
-                function f() {};<br>
-                const f = 5;<br>
-                <br>
-                // THIS WILL CAUSE AN ERROR TOO<br>
-                function f() {<br>
-                const g = 5;<br>
-                var g;<br>
-                <br>
-                //statements<br>
-                }
-            </code>
+<pre><code>
+// THIS WILL CAUSE AN ERROR
+function f() {};
+const f = 5;
+
+// THIS WILL CAUSE AN ERROR TOO
+function f() {
+    const g = 5;
+    var g;
+
+    //statements
+}
+</code></pre>
             <p>
                 However, the properties of objects assigned to constants are not protected, so the following statement is executed without problems.
             </p>
-            <code class="code-block">
-                const MY_OBJECT = {'key': 'value'};<br>
-                MY_OBJECT.key = 'otherValue';
-            </code>
+<pre><code>
+const MY_OBJECT = {'key': 'value'};
+MY_OBJECT.key = 'otherValue';
+</code></pre>
             <p>
                 Also, the contents of an array are not protected, so the following statement is executed without problems.
             </p>
-            <code class="code-block">
-                const MY_ARRAY = ['HTML','CSS'];<br>
-                MY_ARRAY.push('JAVASCRIPT');<br>
-                console.log(MY_ARRAY); //logs ['HTML','CSS','JAVASCRIPT'];
-            </code>
+<pre><code>
+const MY_ARRAY = ['HTML','CSS'];
+MY_ARRAY.push('JAVASCRIPT');
+console.log(MY_ARRAY); //logs ['HTML','CSS','JAVASCRIPT'];
+</code></pre>
         </section>
 
         <section id="Data_types" class="main-section">
@@ -307,13 +285,13 @@
                 Use the <code>if</code> statement to execute a statement if a logical condition is <code>true</code>. Use the optional <code>else</code> clause to execute a statement if the condition is <code>false</code>.
             </p>
             <p>An <code>if</code> statement looks like this:</p>
-            <code class="code-block">
-                    if (condition) {<br>
-                        statement_1;<br>
-                    } else {<br>
-                        statement_2;<br>
-                    }
-            </code>
+<pre><code>
+if (condition) {
+    statement_1;
+} else {
+    statement_2;
+}
+</code></pre>
             <p>
                 Here, the <code>condition</code> can be any expression that evaluates to <code>true</code> or <code>false</code>. (See <a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Boolean#Description">Boolean</a> for an explanation of what evaluates to <code>true</code> and <code>false</code>.)
             </p>
@@ -323,17 +301,17 @@
             <p>
                 You can also compound the statements using else if to have multiple conditions tested in sequence, as follows:
             </p>
-            <code class="code-block">
-                    if (condition_1) {<br>
-                        statement_1;<br>
-                    } else if (condition_2) {<br>
-                        statement_2;<br>
-                    } else if (condition_n) {<br>
-                        statement_n;<br>
-                    } else {<br>
-                        statement_last;<br>
-                    }
-            </code>
+<pre><code>
+if (condition_1) {
+    statement_1;
+} else if (condition_2) {
+    statement_2;
+} else if (condition_n) {
+    statement_n;
+} else {
+    statement_last;
+}
+</code></pre>
             <p>
                 In the case of multiple conditions, only the first logical condition which evaluates to <code>true</code> will be executed. To execute multiple statements, group them within a block statement (<code>{ … })</code>.
             </p>
@@ -341,15 +319,15 @@
             <p>
                 In general, it's good practice to always use block statements—especially when nesting <code>if</code> statements:
             </p>
-            <code class="code-block">
-                    if (condition) {<br>
-                    <pre>   statement_1_runs_if_condition_is_true;</pre>
-                    <pre>   statement_2_runs_if_condition_is_true;</pre>
-                    } else {<br>
-                    <pre>   statement_3_runs_if_condition_is_false;</pre>
-                    <pre>    statement_4_runs_if_condition_is_false;</pre>
-                    }
-            </code>
+<pre><code>
+if (condition) {
+    statement_1_runs_if_condition_is_true;
+    statement_2_runs_if_condition_is_true;
+} else {
+    statement_3_runs_if_condition_is_false;
+    statement_4_runs_if_condition_is_false;
+}
+</code></pre>
             <p>
                 It's unwise to use simple assignments in a conditional expression, because the assignment can be confused with equality when glancing over the code.
             </p>
@@ -368,37 +346,37 @@
             <p>
                 For example, the following code defines a simple function named <code>square</code>:
             </p>
-            <code class="code-block">
-                function square(number) {<br>
-                <pre>   return number * number;</pre>
-                }
-            </code>
+<pre><code>
+function square(number) {
+    return number * number;
+}
+</code></pre>
             <p>
                 The function <code>square</code> takes one parameter, called <code>number</code>. The function consists of one statement that says to return the parameter of the function (that is, <code>number</code>) multiplied by itself. The statement <code><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Statements/return"></a>return</code> specifies the value returned by the function:
             </p>
-            <code class="code-block">
-                <pre>    return number * number;</pre>
-            </code>
+<pre><code>
+return number * number;
+</code></pre>
             <p>
                 Primitive parameters (such as a number) are passed to functions <b>by value</b>; the value is passed to the function, but if the function changes the value of the parameter, <b>this change is not reflected globally or in the calling function</b>.
             </p>
             <p>
-                If you pass an object (i.e. a non-primitive value, such as <code><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Array">Array</a> </code> or a user-defined object) as a parameter and the function changes the object's properties, that change is visible outside the function, as shown in the following example:
+                If you pass an object (i.e. a non-primitive value, such as <code><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Array">Array</a></code> or a user-defined object) as a parameter and the function changes the object's properties, that change is visible outside the function, as shown in the following example:
             </p>
-            <code class="code-block">
-                    function myFunc(theObject) {<br>
-                        theObject.make = 'Toyota';<br>
-                    }<br>
-                    <br>
-                    var mycar = {make: 'Honda', model: 'Accord', year: 1998};<br>
-                    var x, y;<br>
-                    <br>
-                    x = mycar.make; // x gets the value "Honda"<br>
-                    <br>
-                    myFunc(mycar);<br>
-                    y = mycar.make; // y gets the value "Toyota"<br>
-                    <pre>                // (the make property was changed by the function)</pre>
-            </code>
+<pre><code>
+function myFunc(theObject) {
+    theObject.make = 'Toyota';
+}
+
+var mycar = {make: 'Honda', model: 'Accord', year: 1998};
+var x, y;
+
+x = mycar.make; // x gets the value "Honda"
+
+myFunc(mycar);
+y = mycar.make; // y gets the value "Toyota"
+                // (the make property was changed by the function)
+</code></pre>
         </section>
 
         <section id="Reference" class="main-section">
