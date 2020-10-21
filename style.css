@@ -80,7 +80,7 @@ h1 {
 #main-doc {
     position: absolute;
     left: 280px;
-    margin: 30px 100px 30px 70px;
+    margin: 30px 70px;
 }
 
 .grid-container {
@@ -177,5 +177,11 @@ pre {
 
     #main-doc {
         left: 0;
+    }
+}
+
+@media only screen and (max-width: 730px) {
+    #main-doc {
+        margin: 30px;
     }
 }
