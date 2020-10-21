@@ -1,8 +1,10 @@
 :root {
     --code-background: #f1f5f9;
     --dark-blue: #7296cf;
-    --link-blue: #0F7999;
+    --link-blue: #0E7290;
     --divider-line: #919191;
+    --dark-gray: #030303;
+    --light-gray: #EBEBEB;
 }
 
 a:link {
@@ -28,11 +30,6 @@ body {
 }
 
 header {
-    margin-left: 30px;
-    font-size: 20px;
-}
-
-#navbar {
     position: fixed;
     top: 0;
     left: 0;
@@ -41,19 +38,38 @@ header {
     border-right: 4px solid var(--divider-line);
 }
 
-#navbar ul {
-    height: 79%;
+.header-row {
+    background-color: white;
+}
+
+h1 {
+    font-size: 34px;
+    margin-left: 18px;
+}
+
+.menu-button {
+    display: none;
+}
+
+.close-button {
+    display: none;
+}
+
+.sidenav ul {
+    position: fixed;
+    height: 82%;
     overflow-y: auto;
 }
 
-#navbar li {
+.sidenav li {
+    font-size: 17px;
     list-style-type: none;
     margin-left: -10px;
-    margin-right: 28px;
+    margin-right: 24px;
     border-bottom: 1px solid var(--divider-line);
 }
 
-#navbar a {
+.sidenav a {
     padding: 8px 0px;
 }
 
@@ -64,11 +80,25 @@ header {
 #main-doc {
     position: absolute;
     left: 280px;
-    margin: 0 100px 30px 70px;
+    margin: 30px 100px 30px 70px;
 }
 
-.main-section {
+.grid-container {
+    display: grid;
+    grid-template-columns: 50% 50%;
+    grid-template-rows: 25px;
+    grid-gap: 5px 10px;
+}
 
+.grid-header {
+    font-weight: 900;
+    font-size: 18px;
+    padding: 0px 5px;
+}
+
+.grid-item {
+    background-color: var(--code-background);
+    padding: 0px 5px;
 }
 
 .keyboard-button {
@@ -93,6 +123,59 @@ pre {
     overflow-x: hidden;
 }
 
-@media only screen and (min-width: 970px) {
+@media only screen and (max-width: 970px) {
+    header {
+        border-right: none;
+        width: 100%;
+        position: fixed;
+        z-index: 1;
+    }
 
+    .header-row {
+        box-shadow: 0px 1px 2px var(--divider-line);
+    }
+
+    .menu-button {
+        display: inline;
+        font-size: 26px;
+        border: none;
+        margin-left: 24px;
+        background-color: white;
+    }
+
+    h1 {
+        display: inline;
+        margin-left: 4px;
+    }
+    
+    .sidenav {
+        height: 100%;
+        width: 0;
+        position: fixed;
+        top: 0;
+        left: 0;
+        background-color: var(--light-gray);
+        overflow-x: hidden;
+        overflow-y: auto;
+        transition: 0.5s;
+        padding-top: 40px;
+    }
+
+    .sidenav .close-button {
+        display: block;
+        position: absolute;
+        top: 5px;
+        right: 20px;
+        font-size: 36px;
+        border: none;
+        background-color: var(--light-gray);
+    }
+
+    .sidenav ul {
+        position: static;
+    }
+
+    #main-doc {
+        left: 0;
+    }
 }
